@@ -1,0 +1,13 @@
+@import "~@angular/material/theming";
+@import './../../../variables.scss';
+
+button {
+    font-size: 20px;
+    font-weight: 400;
+    height: 150px;
+    width: 300px;
+    &:hover {
+        color: mat-color($primaryPalette);
+        box-shadow: 0px 3px 5px -1px rgb(0 0 0 / 20%), 0px 5px 8px 0px rgb(0 0 0 / 14%), 0px 1px 14px 0px rgb(0 0 0 / 12%);
+    }
+}

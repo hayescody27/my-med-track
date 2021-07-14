@@ -1,0 +1,80 @@
+@import "~@angular/material/theming";
+@import './../../variables.scss';
+
+:host ::ng-deep .mat-form-field {
+    width: 400px;
+    &.half {
+        max-width: 190px;
+    }
+    mat-label {
+        font-size: 18px;
+    }
+}
+
+mat-icon {
+    &:hover {
+        color: mat-color($primaryPalette);
+    }
+}
+
+.mat-header-row {
+    background-color: mat-color($primaryPalette);
+}
+
+.mat-cell {
+    font-size: 16px;
+}
+
+.mat-header-cell {
+    font-size: 18px;
+    color: white;
+}
+
+textarea {
+    min-height: 100px;
+    max-height: 100px;
+    resize: none !important;
+}
+
+.table-container {
+    height: 200px;
+    overflow: auto;
+    padding: 0;
+}
+
+.no-data-row {
+    height: 200px;
+}
+
+#add-alert-btn {
+    height: 50px;
+    width: 200px;
+    font-size: 18px;
+    &:hover {
+        background-color: mat-color($primaryPalette);
+        color: white;
+        box-shadow: 0px 3px 5px -1px rgb(0 0 0 / 20%), 0px 5px 8px 0px rgb(0 0 0 / 14%), 0px 1px 14px 0px rgb(0 0 0 / 12%);
+        mat-icon {
+            &:hover {
+                color: white;
+            }
+        }
+    }
+}
+
+.form-btn {
+    height: 50px;
+    width: 200px;
+    font-size: 18px;
+    &:hover {
+        box-shadow: 0px 3px 5px -1px rgb(0 0 0 / 20%), 0px 5px 8px 0px rgb(0 0 0 / 14%), 0px 1px 14px 0px rgb(0 0 0 / 12%);
+        mat-icon {
+            &:hover {
+                color: white;
+            }
+        }
+    }
+}
+
+
+
