@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-medication-details',
@@ -16,10 +17,19 @@ export class MedicationDetailsComponent implements OnInit {
     { weekdays: 'All', time: '7am', enabled: true },
   ];
   refillFrequencies = ['Days', 'Weeks', 'Months', 'Years']
+  medicationDetailsForm: FormGroup;
 
-  constructor() { }
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
+    this.medicationDetailsForm = this.fb.group({
+      name: ['', Validators.required],
+      dosage: ['', Validators.required],
+      specialInstructions: ['', Validators.maxLength(250)],
+      refillFrequency: ['', Validators.required],
+      refillFreqUom: ['Days', Validators.required]
+    });
+    this.medicationDetailsForm.valueChanges.subscribe(v => console.log(this.medicationDetailsForm.valid))
   }
 
 }

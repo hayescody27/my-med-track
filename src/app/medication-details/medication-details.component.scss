@@ -2,16 +2,25 @@
 @import './../../variables.scss';
 
 :host ::ng-deep .mat-form-field {
-    width: 400px;
-    &.half {
-        max-width: 190px;
+    &.split {
+        width: 47.5%;
     }
     mat-label {
+        font-size: 16px;
+    }
+}
+
+input, textarea {
+    font-size: 18px;
+}
+
+:host ::ng-deep mat-select {
+    .mat-select-value-text {
         font-size: 18px;
     }
 }
 
-mat-icon {
+.edit-icon {
     &:hover {
         color: mat-color($primaryPalette);
     }
@@ -64,9 +73,9 @@ textarea {
 
 .form-btn {
     height: 50px;
-    width: 200px;
+    width: 47.5%;
     font-size: 18px;
-    &:hover {
+    &:hover:not([disabled]) {
         box-shadow: 0px 3px 5px -1px rgb(0 0 0 / 20%), 0px 5px 8px 0px rgb(0 0 0 / 14%), 0px 1px 14px 0px rgb(0 0 0 / 12%);
         mat-icon {
             &:hover {
@@ -74,6 +83,7 @@ textarea {
             }
         }
     }
+
 }
 
 
