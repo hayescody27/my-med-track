@@ -1,7 +1,7 @@
 <div class="container p-4">
     <div class="row">
         <div class="col-sm-2">
-            <button mat-button routerLink="/medication-details">
+            <button mat-button (click)="backToDetails()">
                 <mat-icon>chevron_left</mat-icon>
                 <span>
                     Back to details
@@ -61,7 +61,7 @@
         </div>
         <div class="row justify-content-center pt-5">
             <div class="col-sm-4 d-flex justify-content-between">
-                <button type="button" mat-raised-button color="primary" class="form-btn" [disabled]="!medicationAlertForm.valid" routerLink="/medication-details">
+                <button type="button" mat-raised-button color="primary" class="form-btn" [disabled]="!medicationAlertForm.valid" (click)="backToDetails()">
                     <mat-icon>save</mat-icon>
                     <span> Save</span>
                 </button>

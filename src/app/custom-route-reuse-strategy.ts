@@ -10,7 +10,7 @@ export class CustomRouteReuseStrategy implements RouteReuseStrategy {
         this.storedRoutes.set(route.routeConfig.path, handle);
     }
     shouldAttach(route: ActivatedRouteSnapshot): boolean {
-        return !!route.routeConfig && !!this.storedRoutes.get(route.routeConfig.path);
+        return !!route.routeConfig && !!this.storedRoutes.get(route.routeConfig.path) && route.queryParams.from === 'alerts';
     }
     retrieve(route: ActivatedRouteSnapshot): DetachedRouteHandle {
         return this.storedRoutes.get(route.routeConfig.path);

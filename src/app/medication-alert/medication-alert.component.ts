@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-medication-alert',
@@ -12,7 +13,7 @@ export class MedicationAlertComponent implements OnInit {
   days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
   period = ['AM', 'PM']
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private router: Router) { }
 
   ngOnInit(): void {
     this.medicationAlertForm = this.fb.group({
@@ -23,5 +24,9 @@ export class MedicationAlertComponent implements OnInit {
       period: ['PM', Validators.required],
       enabled: [true, Validators.required]
     });
+  }
+
+  backToDetails(): void {
+    this.router.navigate(['/medication-details'], { queryParams: { from: 'alerts' } });
   }
 }
