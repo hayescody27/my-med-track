@@ -1,0 +1,75 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-sm-2">
+            <button mat-button routerLink="/medication-details">
+                <mat-icon>chevron_left</mat-icon>
+                <span>
+                    Back to details
+                </span>
+            </button>
+        </div>
+        <div class="col-sm-8 page-title">
+            Medication Alert
+        </div>
+    </div>
+    <form class="pt-5" autocomplete="off" [formGroup]="medicationAlertForm">
+        <div class="row justify-content-center">
+            <div class="col-sm-4">
+                <mat-label id="med-name-label">Medication Name: </mat-label>
+            </div>
+        </div>
+        <div class="row justify-content-center pt-2">
+            <div class="col-sm-4" id="med-name-value">
+                {{ medicationAlertForm.getRawValue().name }}
+            </div>
+        </div>
+        <div class="row justify-content-center pt-3">
+            <div class="col-sm-4">
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>Weekdays</mat-label>
+                    <mat-select formControlName="weekdays" multiple>
+                        <mat-option *ngFor="let day of days" [value]="day">
+                            {{day}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row justify-content-center pt-3">
+            <div class="col-sm-4 d-flex justify-content-between">
+                <mat-form-field appearance="outline" class="split">
+                    <mat-label>Hours</mat-label>
+                    <input type="number" matInput placeholder="Ex. 12" min="0" max="12" step="1" formControlName="hours">
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="split">
+                    <mat-label>Minutes</mat-label>
+                    <input type="number" matInput placeholder="Ex. 00" min="0" max="59" step="1" formControlName="minutes">
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="split">
+                    <mat-select formControlName="period">
+                        <mat-option *ngFor="let p of period" [value]="p">
+                            {{p}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row justify-content-center pt-3">
+            <div class="col-sm-4 text-center">
+                <mat-checkbox formControlName="enabled" color="primary"> Enabled</mat-checkbox>
+            </div>
+        </div>
+        <div class="row justify-content-center pt-5">
+            <div class="col-sm-4 d-flex justify-content-between">
+                <button type="button" mat-raised-button color="primary" class="form-btn" [disabled]="!medicationAlertForm.valid" routerLink="/medication-details">
+                    <mat-icon>save</mat-icon>
+                    <span> Save</span>
+                </button>
+                <button type="button" mat-raised-button color="warn" class="form-btn">
+                    <mat-icon>delete</mat-icon>
+                    <span> Delete</span>
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

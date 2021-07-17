@@ -20,6 +20,9 @@ import { MatTableModule } from '@angular/material/table';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDividerModule } from '@angular/material/divider';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MedicationAlertComponent } from './medication-alert/medication-alert.component';
+import { RouteReuseStrategy } from '@angular/router';
+import { CustomRouteReuseStrategy } from './custom-route-reuse-strategy';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NavBarComponent,
     HomeComponent,
     HomeButtonComponent,
-    MedicationDetailsComponent
+    MedicationDetailsComponent,
+    MedicationAlertComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +51,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: RouteReuseStrategy,
+      useClass: CustomRouteReuseStrategy
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

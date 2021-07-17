@@ -29,7 +29,6 @@ export class MedicationDetailsComponent implements OnInit {
       refillFrequency: ['', Validators.required],
       refillFreqUom: ['Days', Validators.required]
     });
-    this.medicationDetailsForm.valueChanges.subscribe(v => console.log(this.medicationDetailsForm.valid))
   }
 
 }

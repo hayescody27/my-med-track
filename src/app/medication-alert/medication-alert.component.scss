@@ -1,0 +1,25 @@
+mat-label {
+    font-size: 16px;
+}
+
+#med-name-label {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+#med-name-value {
+    font-size: 18px;
+}
+
+:host ::ng-deep .mat-form-field {
+    &.split {
+        width: 30%;
+    }
+    mat-label {
+        font-size: 16px;
+    }
+}
+
+mat-checkbox {
+    font-size: 18px;
+}
