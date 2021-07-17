@@ -1,0 +1,35 @@
+@import "~@angular/material/theming";
+@import './../../variables.scss';
+
+.table-container {
+    height: 500px;
+    overflow: auto;
+    padding: 0;
+    background-color: #fff;
+}
+
+.no-data-row {
+    height: 200px;
+}
+
+.mat-header-row {
+    background-color: mat-color($primaryPalette);
+}
+
+.mat-header-cell {
+    font-size: 18px;
+    color: white;
+}
+
+.mat-cell {
+    font-size: 16px;
+}
+
+.mat-row .mat-cell {
+    cursor: pointer;
+}
+  
+.mat-row:hover .mat-cell {
+    background-color: mat-color($primaryPalette);
+    color: white;
+}

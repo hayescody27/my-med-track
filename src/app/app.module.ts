@@ -23,6 +23,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MedicationAlertComponent } from './medication-alert/medication-alert.component';
 import { RouteReuseStrategy } from '@angular/router';
 import { CustomRouteReuseStrategy } from './custom-route-reuse-strategy';
+import { MedicationListComponent } from './medication-list/medication-list.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { CustomRouteReuseStrategy } from './custom-route-reuse-strategy';
     HomeComponent,
     HomeButtonComponent,
     MedicationDetailsComponent,
-    MedicationAlertComponent
+    MedicationAlertComponent,
+    MedicationListComponent
   ],
   imports: [
     BrowserModule,

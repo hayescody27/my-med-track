@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-medication-details',
@@ -18,8 +19,11 @@ export class MedicationDetailsComponent implements OnInit {
   ];
   refillFrequencies = ['Days', 'Weeks', 'Months', 'Years']
   medicationDetailsForm: FormGroup;
+  showBackButton: boolean = false;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private router: Router, private route: ActivatedRoute) {
+    this.route.queryParams.subscribe(params => this.showBackButton = params.from === 'list');
+  }
 
   ngOnInit(): void {
     this.medicationDetailsForm = this.fb.group({
@@ -29,6 +33,10 @@ export class MedicationDetailsComponent implements OnInit {
       refillFrequency: ['', Validators.required],
       refillFreqUom: ['Days', Validators.required]
     });
+  }
+
+  backToList() {
+    this.router.navigate(['/medication-list'], { queryParams: { from: 'details' } });
   }
 
 }
