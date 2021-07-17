@@ -24,6 +24,11 @@ import { MedicationAlertComponent } from './medication-alert/medication-alert.co
 import { RouteReuseStrategy } from '@angular/router';
 import { CustomRouteReuseStrategy } from './custom-route-reuse-strategy';
 import { MedicationListComponent } from './medication-list/medication-list.component';
+import { ConsumptionTrackerComponent } from './consumption-tracker/consumption-tracker.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatCardModule } from '@angular/material/card';
+import { MatNativeDateModule, MatRippleModule } from '@angular/material/core';
+import { HistoryCardComponent } from './components/history-card/history-card.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +38,9 @@ import { MedicationListComponent } from './medication-list/medication-list.compo
     HomeButtonComponent,
     MedicationDetailsComponent,
     MedicationAlertComponent,
-    MedicationListComponent
+    MedicationListComponent,
+    ConsumptionTrackerComponent,
+    HistoryCardComponent
   ],
   imports: [
     BrowserModule,
@@ -50,6 +57,10 @@ import { MedicationListComponent } from './medication-list/medication-list.compo
     MatTableModule,
     MatCheckboxModule,
     MatDividerModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatRippleModule,
+    MatCardModule,
     ReactiveFormsModule,
     FormsModule
   ],

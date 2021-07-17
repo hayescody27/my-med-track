@@ -8,9 +8,7 @@ import { Router } from '@angular/router';
 })
 export class MedicationListComponent {
 
-  constructor(private router: Router) {
-
-  }
+  constructor(private router: Router) { }
 
   displayedColumns: string[] = ['name', 'dosage', 'instructions', 'refillFreq', 'schedule', 'active'];
   dataSource = [

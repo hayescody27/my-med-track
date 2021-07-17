@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ConsumptionTrackerComponent } from './consumption-tracker/consumption-tracker.component';
 import { HomeComponent } from './home/home.component';
 import { MedicationAlertComponent } from './medication-alert/medication-alert.component';
 import { MedicationDetailsComponent } from './medication-details/medication-details.component';
@@ -10,7 +11,8 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'medication-details', component: MedicationDetailsComponent },
   { path: 'medication-alert', component: MedicationAlertComponent },
-  { path: 'medication-list', component: MedicationListComponent }
+  { path: 'consumption-tracker', component: ConsumptionTrackerComponent },
+  { path: 'medication-list', component: MedicationListComponent },
 ];
 
 @NgModule({

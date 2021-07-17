@@ -1,0 +1,22 @@
+<mat-card class="mat-elevation-z2">
+    <div class="row medication-name">
+        <div class="col-sm-12 text-center">
+            {{data.medicationName}}
+        </div>
+    </div>
+    <div class="row justify-content-center align-items-center due-at pt-3">
+        <div class="col-sm-8 offset-sm-2 text-center">
+            {{'Due at: ' + data.dueAt}}
+        </div>
+        <div class="col-sm-2">
+            <button mat-mini-fab color="primary">
+                <mat-icon>note_add</mat-icon>
+            </button>
+        </div>
+    </div>
+    <div class="row status">
+        <div class="col-sm-12 text-center">
+            {{'Status: ' + data.status}}
+        </div>
+    </div>
+</mat-card>
